@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>First App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        <!-- Page container -->
+        <div class="container">
+            <div class="page-header">
+                <div class="btn-toolbar pull-right">
+                    <div class="btn-group">
+                        <a class="btn btn-default top-right" href="#add">Advance Add</a>
+                        <a class="btn btn-default top-right quickAdd">Quick Add</a>
+                    </div>
+                </div>
+                <h1>Welcome to FirstApp</h1>
+            </div>
+
+            <!-- Page -->
+            <div class="page">Whops! We didn't find your page...</div>
+        </div>
+
+        <!-- Home page template -->
+        <script type="text/template" id="home-page">
+            <div class="tableView1">
+                tableView container!
+            </div>
+            <div class="tableView2">
+                tableView container!
+            </div>
+        </script>
+
+        <!-- Add page template -->
+        <script type="text/template" id="add-page">
+            <form class="add-member-form">
+                <legend>Add New Member</legend>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" />
+                </div>
+
+                <!--<div class="form-group">-->
+                    <!--<label for="age">Age</label>-->
+                    <!--<input type="number" class="form-control" id="age" name="age" placeholder="Enter age" />-->
+                <!--</div>-->
+
+                <!--<div class="form-group">-->
+                    <!--<label>Completed?</label>-->
+                    <!--<div class="radio">-->
+                        <!--<label>-->
+                            <!--<input type="radio" name="completed" value="true">-->
+                            <!--Yes-->
+                        <!--</label>-->
+                    <!--</div>-->
+                    <!--<div class="radio">-->
+                        <!--<label>-->
+                            <!--<input type="radio" name="completed" value="false" checked>-->
+                            <!--No-->
+                        <!--</label>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <button type="submit" class="btn btn-default">Add Member</button>
+            </form>
+        </script>
+
+        <!-- Table view template-->
+        <script type="text/template" id="table-view">
+            <table class="table striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th class="col-xs-1">Status</th>
+                        <th class="col-xs-1"></th>
+                    </tr>
+                </thead>
+                <tbody class="table-view-tbody"></tbody>
+            </table>
+        </script>
+
+        <!-- Table View Row-->
+        <script type="text/template" id="table-view-row">
+            <td><%= name %></td>
+            <td><%= completed ? 'complete' : 'In Progress' %></td>
+            <td><a class="btn btn-default btn-xs toggle">Toggle</a></td>
+        </script>
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/lodash/lodash.min.js"></script>
+        <script src="bower_components/backbone/backbone.js"></script>
+
+        <script src="scripts/backbone.prototype.js"></script>
+
+        <script src="scripts/models/users.js"></script>
+        <script src="scripts/collections/users.js"></script>
+        <script src="scripts/views/home.js"></script>
+        <script src="scripts/views/add.js"></script>
+        <script src="scripts/views/tableview.js"></script>
+        <script src="scripts/routers/router.js"></script>
+        <script src="scripts/app.js"></script>
+    </body>
+</html>
